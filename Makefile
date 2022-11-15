@@ -16,9 +16,9 @@ HEADER_FILES := $(wildcard $(HEADERDIR)/*.h)
 
 #compiler an instance of the simulator
 $(OUTPUTDIR)/$(PROGRAM_NAME): $(SOURCE_FILES) $(HEADER_FILES)
-	g++ $(SOURCE_FILES) -o $(OUTPUTDIR)/$(PROGRAM_NAME).exe $(LD_FLAGS) $(CXXFLAGS)
+	g++ $(SOURCE_FILES) -o $(OUTPUTDIR)/$(PROGRAM_NAME) $(LD_FLAGS) $(CXXFLAGS)
 
 #remove previously generated files
 clean:
-	$(Q)rm -rf $(OUTPUTDIR)/$(PROGRAM_NAME).exe
+	$(Q)rm -rf $(OUTPUTDIR)/$(PROGRAM_NAME)
 

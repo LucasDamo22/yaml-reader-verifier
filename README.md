@@ -1,2 +1,3 @@
-# yaml-reader-verifier
-# yaml-reader-verifier
+# template-ic
+
+To run the program, type "./bin/main.exe"
