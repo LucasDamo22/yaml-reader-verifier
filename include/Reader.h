@@ -5,5 +5,4 @@
 
 int reader(int utilizacao);
 
-
 #endif

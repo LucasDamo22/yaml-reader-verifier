@@ -6,7 +6,6 @@
 #include <iostream>
 #include <sstream>
 
-
 float random(int min, int max)
 {
   if (min == 1 && max == 1)
@@ -75,7 +74,7 @@ int generator(int utilizacao)
   std::string filename;
 
   filename = "./data/" + std::to_string(utilizacao) + ".yaml";
-  std::cout << filename<<std::endl;
+  std::cout << filename << std::endl;
   arqOutYaml.open(filename, std::ios::out);
   if (!arqOutYaml.is_open())
   {

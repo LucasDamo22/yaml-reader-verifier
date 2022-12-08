@@ -6,6 +6,7 @@
 /// @param max Highest random number possible.
 /// @return Return the random number.
 float random(int min, int max);
+
 /// @brief Generate the random yaml file.
 /// @param utilizacao targeted utilization value for the random yaml file.
 int generator(int utilizacao);

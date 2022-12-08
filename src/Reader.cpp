@@ -11,7 +11,7 @@
 int reader(int utilizacao)
 {
     std::string filename;
-    filename  = "./data/" + std::to_string(utilizacao) + ".yaml";
+    filename = "./data/" + std::to_string(utilizacao) + ".yaml";
     Processor cpu1 = Processor();
     Processor cpu2 = Processor();
     std::string contents = get_file_contents(filename);
@@ -40,13 +40,13 @@ int reader(int utilizacao)
             cpu2.add_process(aux);
         }
     }
-    	std::stringstream ss;
-	ss<<cpu1.get_coef() << std::endl;
-	ss<<cpu2.get_coef() << std::endl;
-    std::cout <<"------------"<<std::endl;
+    std::stringstream ss;
+    ss << cpu1.get_coef() << std::endl;
+    ss << cpu2.get_coef() << std::endl;
+    std::cout << "------------" << std::endl;
     std::cout << "cpu1 coef: " << cpu1.get_coef() << std::endl;
     std::cout << "cpu2 coef: " << cpu2.get_coef() << std::endl;
-    std::cout<< "coef total = "<<cpu1.get_coef()+cpu2.get_coef()<<std::endl;
-    
+    std::cout << "coef total = " << cpu1.get_coef() + cpu2.get_coef() << std::endl;
+
     return 0;
 }

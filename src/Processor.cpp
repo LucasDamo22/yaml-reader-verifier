@@ -1,15 +1,16 @@
 
 #include "Processor.h"
 
-
-Processor::Processor(){
+Processor::Processor()
+{
     coef = 0;
 }
 
-void Processor::add_process(double process){
+void Processor::add_process(double process)
+{
     coef += process;
 }
-double Processor::get_coef(){
+double Processor::get_coef()
+{
     return coef;
 }
-
