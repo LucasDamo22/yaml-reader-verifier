@@ -1,5 +1,4 @@
-
-
+/// @brief Simulates utilization of 1 processor.
 class Processor{
     double coef;
 public:
