@@ -19,8 +19,16 @@ HEADER_FILES := $(wildcard $(HEADERDIR)/*.h)
 $(OUTPUTDIR)/$(PROGRAM_NAME): $(SOURCE_FILES) $(HEADER_FILES)
 	g++ $(SOURCE_FILES) -o $(OUTPUTDIR)/$(PROGRAM_NAME) $(LD_FLAGS) $(CXXFLAGS)
 
+docs:
+	mkdir docs
+	mkdir docs/doxygen
+	doxygen
+remdocs:
+	rm -r docs
+
 #remove previously generated files
 clean:
 	$(Q)rm -rf $(OUTPUTDIR)/$(PROGRAM_NAME)
+	rm ./data/*.yaml
 	
 
