@@ -6,17 +6,13 @@
 #include <iostream>
 #include <sstream>
 
-float random(int min, int max)
-{
-  if (min == 1 && max == 1)
-    max += 1;
+float random(int min, int max) {
+  if (min == 1 && max == 1) max += 1;
 
   return (rand() % (min - max)) + min;
 }
 
-int generator(int utilizacao)
-{
-
+int generator(int utilizacao) {
   // initializa o gerador de números pseudo-aleatórios com uma semente
   // diferente a cada inicialização
   srand(time(NULL));
@@ -42,9 +38,7 @@ int generator(int utilizacao)
   float parcelas[num_parcelas];
   float parcelasSuperiores[num_parcelas];
 
-  for (int i = 0; i < num_parcelas; i++)
-  {
-
+  for (int i = 0; i < num_parcelas; i++) {
     // parcela terá no mínimo 5% da utilizacao faltante (valor mínimo = 1)
     min_valor_parcela = ((UTILIZACAO_ALVO - utilizacao_atual) / 20) + 1;
 
@@ -57,12 +51,14 @@ int generator(int utilizacao)
     parcelas[i] = parcela;
   }
 
-  parcelas[num_parcelas - 1] = parcelas[num_parcelas - 1] + (UTILIZACAO_ALVO - utilizacao_atual); // adicionando o que falta na ultima parcela
+  parcelas[num_parcelas - 1] =
+      parcelas[num_parcelas - 1] +
+      (UTILIZACAO_ALVO -
+       utilizacao_atual);  // adicionando o que falta na ultima parcela
 
   //**********Transformando as parcelas em frações que somem o coeficiente e
   // colocando em um array de numeradores chamado de "parcelasSuperiores"
-  for (int i = 0; i < num_parcelas; i++)
-  {
+  for (int i = 0; i < num_parcelas; i++) {
     float aux = parcelas[i];
     parcelas[i] = parcelas[i] * 100;
     parcelasSuperiores[i] = (aux * UTILIZACAO_ALVO) / num_parcelas;
@@ -76,15 +72,12 @@ int generator(int utilizacao)
   filename = "./data/" + std::to_string(utilizacao) + ".yaml";
   std::cout << filename << std::endl;
   arqOutYaml.open(filename, std::ios::out);
-  if (!arqOutYaml.is_open())
-  {
-
+  if (!arqOutYaml.is_open()) {
     std::cout << "erro na geração do arquivo";
     return 1;
   }
   arqOutYaml << "Processos:" << std::endl;
-  for (int i = 0; i < num_parcelas; i++)
-  {
+  for (int i = 0; i < num_parcelas; i++) {
     arqOutYaml << "  processo" << i + 1 << ":"
                << " [" << parcelasSuperiores[i] << ", " << parcelas[i] << "]"
                << std::endl;
