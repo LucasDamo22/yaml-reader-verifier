@@ -18,6 +18,8 @@ int main(int argc, char **argv) {
   srand(time(NULL));
 
   int UTILIZACAO_ALVO;
+  std::cout<<atoi(argv[1])<<std::endl;
+  std::cout<<atoi(argv[2])<<std::endl;
   for(int z=atoi(argv[1]);z<atoi(argv[2]);z++){
   UTILIZACAO_ALVO = z;
   //UTILIZACAO_ALVO = utilizacao;
@@ -70,7 +72,7 @@ int main(int argc, char **argv) {
 
   std::string filename;
 
-  filename = "../Cpu-usage-calculator/data/" + std::to_string(z) + ".yaml";
+  filename = "./Cpu-usage-calculator/data/" + std::to_string(z) + ".yaml";
   std::cout << filename << std::endl;
   arqOutYaml.open(filename, std::ios::out);
   if (!arqOutYaml.is_open()) {
