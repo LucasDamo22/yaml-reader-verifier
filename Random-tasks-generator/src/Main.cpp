@@ -1,10 +1,10 @@
-#include "Generator.h"
-
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <sstream>
+
+
 
 float random(int min, int max) {
   if (min == 1 && max == 1) max += 1;
@@ -12,14 +12,15 @@ float random(int min, int max) {
   return (rand() % (min - max)) + min;
 }
 
-int generator(int utilizacao) {
+int main(int argc, char **argv) {
   // initializa o gerador de números pseudo-aleatórios com uma semente
   // diferente a cada inicialização
   srand(time(NULL));
 
   int UTILIZACAO_ALVO;
-  // UTILIZACAO_ALVO = atoi(argv[1]);
-  UTILIZACAO_ALVO = utilizacao;
+  for(int z=atoi(argv[1]);z<atoi(argv[2]);z++){
+  UTILIZACAO_ALVO = z;
+  //UTILIZACAO_ALVO = utilizacao;
 
   int min_parcelas = (UTILIZACAO_ALVO / 10) + 1;
   int max_parcelas = (UTILIZACAO_ALVO / 5) + 1;
@@ -69,7 +70,7 @@ int generator(int utilizacao) {
 
   std::string filename;
 
-  filename = "./data/" + std::to_string(utilizacao) + ".yaml";
+  filename = "../Cpu-usage-calculator/data/" + std::to_string(z) + ".yaml";
   std::cout << filename << std::endl;
   arqOutYaml.open(filename, std::ios::out);
   if (!arqOutYaml.is_open()) {
@@ -83,6 +84,7 @@ int generator(int utilizacao) {
                << std::endl;
   }
   arqOutYaml.close();
+  }
 
   return 0;
 }

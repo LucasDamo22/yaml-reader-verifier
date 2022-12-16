@@ -9,7 +9,7 @@ To generate documentation, make sure you have installed the Doxygen in your syst
 
 
 
-Built on Ubuntu ???
+Built on Ubuntu 22.04.1 LTS
 
 requirements for running the program:
 
