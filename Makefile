@@ -1,7 +1,7 @@
 all:
 	cd Random-tasks-generator && make
 	cd Cpu-usage-calculator && make
-cleanAll:
+clean:
 	cd Random-tasks-generator && make clean
 	cd Cpu-usage-calculator && make clean
 cleanDataFiles:

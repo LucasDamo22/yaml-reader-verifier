@@ -1,7 +1,0 @@
-Processos:
-  processo1: [30, 600]
-  processo2: [10, 200]
-  processo3: [10, 200]
-  processo4: [10, 200]
-  processo5: [5, 100]
-  processo6: [85, 1700]
