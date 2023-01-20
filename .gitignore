@@ -33,3 +33,9 @@
 
 # Clang configuration files
 *.clang-format
+
+# Githubfiles
+*.gitignore
+
+#vscode files
+*.vscode
