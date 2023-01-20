@@ -27,7 +27,7 @@ std::string get_file_contents(std::string filename) {
 std::vector<std::string> get_file_paths() {
   std::string path = "./Cpu-usage-calculator/data/";
   std::vector<std::string> data_files;
-  for (const auto& entry : std::filesystem::directory_iterator(path)){
+  for (const auto& entry : std::filesystem::directory_iterator(path)) {
     std::string aux = entry.path();
     if (aux.find(".yaml") != std::string::npos) {
       data_files.push_back(entry.path());
@@ -42,18 +42,18 @@ std::vector<std::string> get_file_paths() {
 /// @param a string a.
 /// @param b string b.
 /// @return returns TRUE if "a" comes first than "b" in alphabatical order, false if it's not.
-bool mycomp(std::string a, std::string b){
-	//returns 1 if string a is alphabetically 
-	//less than string b
-	//quite similar to strcmp operation
-	return a<b;
+bool mycomp(std::string a, std::string b) {
+  // returns 1 if string a is alphabetically 
+  // less than string b
+  // quite similar to strcmp operation
+  return a < b;
 }
 /// @brief Goes through every file stored in the "files" vector to sort it.
 /// @param files The vector to be sorted.
 /// @return The sorted vector
-std::vector<std::string> alphabatically_sort(std::vector<std::string> files){
-    int n=files.size();
-    sort(files.begin(),files.end(),mycomp);
+std::vector<std::string> alphabatically_sort(std::vector<std::string> files) {
+    int n = files.size();
+    sort(files.begin(), files.end(), mycomp);
 
     return files;
 }

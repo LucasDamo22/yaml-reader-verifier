@@ -1,5 +1,6 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef CPU_USAGE_CALCULATOR_INCLUDE_MAIN_H_
+#define CPU_USAGE_CALCULATOR_INCLUDE_MAIN_H_
+
 int main(int argc, char **argv);
 
-#endif
+#endif  // CPU_USAGE_CALCULATOR_INCLUDE_MAIN_H_

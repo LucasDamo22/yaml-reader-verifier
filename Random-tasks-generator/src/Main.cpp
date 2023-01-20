@@ -6,8 +6,8 @@
 
 
 /// @brief Function responsible for generating random numbers, obeying the rules of maximum and minimum value, and making sure, none of the values is equal to 0.
-/// @param min 
-/// @param max 
+/// @param min
+/// @param max
 /// @return The random number generated within the scope.
 float random(int min, int max) {
   if (min == 1 && max == 1) max += 1;
@@ -16,30 +16,28 @@ float random(int min, int max) {
 }
 
 int main(int argc, char **argv) {
-  
   // Initializes the pseudo-random number generator with a different
   // seed at every program call
   srand(time(NULL));
 
   int UTILIZACAO_ALVO;
-  
+
   // Loop responsible for generating the files with random tasks within the range
   // requested by the user.
-  for(int z=atoi(argv[1]); z<atoi(argv[2]); z++){
-    
+  for (int z = atoi(argv[1]); z < atoi(argv[2]); z++) {
     // The current cpu utilization target
     UTILIZACAO_ALVO = z;
-    
+
     // Set the minimal number of possibles portions to 10% of the cpu utilization target
     int min_parcelas = (UTILIZACAO_ALVO / 10) + 1;
     // Set the maximal number of possibles portions to 20% of the cpu utilization target
     int max_parcelas = (UTILIZACAO_ALVO / 5) + 1;
 
-    
+
     // Defines a number of portions between the minimal amount and the maximum amount
     int num_parcelas = random(min_parcelas, max_parcelas);
 
-    // The amount of CPU available is given by UTILIZACAO_ALVO. While we dont 
+    // The amount of CPU available is given by UTILIZACAO_ALVO. While we dont
     // hit that utilization target, we keep generating portions.
     int utilizacao_atual = 0;
 
@@ -59,9 +57,9 @@ int main(int argc, char **argv) {
 
       parcelas[i] = parcela;
     }
-    //adding the missing amount on the last portion
-    
-    parcelas[num_parcelas - 1] = parcelas[num_parcelas - 1] +(UTILIZACAO_ALVO -utilizacao_atual);  
+    // adding the missing amount on the last portion
+
+    parcelas[num_parcelas - 1] = parcelas[num_parcelas - 1] +(UTILIZACAO_ALVO -utilizacao_atual);
 
     // Transforming the portions in fractions that equals to utilization coefficient of each task
     // then placing it on an array of numerators called "parcelasSuperiores"
