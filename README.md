@@ -1,5 +1,6 @@
 # YAML Reader and Verifier
 - This project contains two programs. A cpu usage calculator for real-time systems, and a tester for this program.
+The calculator reads a YAML file that contains de minimal processing time, and the 
 
 
 
